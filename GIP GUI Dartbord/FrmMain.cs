@@ -16,5 +16,12 @@ namespace GIP_GUI_Dartbord
         {
             InitializeComponent();
         }
+
+        
+
+        private void click_rekenmachine(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
