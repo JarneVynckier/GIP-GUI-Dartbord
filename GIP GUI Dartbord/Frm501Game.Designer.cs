@@ -46,7 +46,7 @@ namespace GIP_GUI_Dartbord
             this.btn0 = new System.Windows.Forms.Button();
             this.btnEnter = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.lblPlayer1Legs = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -81,7 +81,7 @@ namespace GIP_GUI_Dartbord
             this.tableLayoutPanel1.Controls.Add(this.btn2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn0, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnBack, 2, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 273);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -105,6 +105,7 @@ namespace GIP_GUI_Dartbord
             this.btn9.TabIndex = 8;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
+            this.btn9.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // btn8
             // 
@@ -119,6 +120,7 @@ namespace GIP_GUI_Dartbord
             this.btn8.TabIndex = 7;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
+            this.btn8.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // btn7
             // 
@@ -133,6 +135,7 @@ namespace GIP_GUI_Dartbord
             this.btn7.TabIndex = 6;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
+            this.btn7.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // btn6
             // 
@@ -147,6 +150,7 @@ namespace GIP_GUI_Dartbord
             this.btn6.TabIndex = 5;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
+            this.btn6.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // btn5
             // 
@@ -161,6 +165,7 @@ namespace GIP_GUI_Dartbord
             this.btn5.TabIndex = 4;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
+            this.btn5.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // btn4
             // 
@@ -175,6 +180,7 @@ namespace GIP_GUI_Dartbord
             this.btn4.TabIndex = 3;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // btn3
             // 
@@ -189,6 +195,7 @@ namespace GIP_GUI_Dartbord
             this.btn3.TabIndex = 2;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // btn2
             // 
@@ -203,6 +210,7 @@ namespace GIP_GUI_Dartbord
             this.btn2.TabIndex = 1;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // btn1
             // 
@@ -218,6 +226,7 @@ namespace GIP_GUI_Dartbord
             this.btn1.TabIndex = 0;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // lblPlayer2
             // 
@@ -267,6 +276,7 @@ namespace GIP_GUI_Dartbord
             this.btn0.TabIndex = 9;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
+            this.btn0.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // btnEnter
             // 
@@ -295,19 +305,20 @@ namespace GIP_GUI_Dartbord
             this.btnPrevious.TabIndex = 8;
             this.btnPrevious.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnBack
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(233, 345);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 108);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnBack.BackColor = System.Drawing.Color.Black;
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(233, 345);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(109, 108);
+            this.btnBack.TabIndex = 10;
+            this.btnBack.Text = "";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // lblPlayer1Legs
             // 
@@ -484,7 +495,7 @@ namespace GIP_GUI_Dartbord
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnEnter;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblPlayer1Legs;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
