@@ -10,21 +10,17 @@ using System.Windows.Forms;
 
 namespace GIP_GUI_Dartbord
 {
-    public partial class FrmMain : Form
+    public partial class Frm501Game : Form
     {
-        public FrmMain()
+        public Frm501Game()
         {
             InitializeComponent();
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
+        private void Frm501Game_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-        Frm501Game frm501Game = new Frm501Game();
-        private void btn501Game_Click(object sender, EventArgs e)
-        {
-            frm501Game.ShowDialog();
+            e.Cancel = true;
+            this.Hide();
         }
     }
 }
