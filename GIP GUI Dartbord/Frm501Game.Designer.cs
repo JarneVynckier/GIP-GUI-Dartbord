@@ -40,23 +40,23 @@ namespace GIP_GUI_Dartbord
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
+            this.btn0 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.lblPlayer2 = new System.Windows.Forms.Label();
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.txtScore = new System.Windows.Forms.TextBox();
-            this.btn0 = new System.Windows.Forms.Button();
             this.btnEnter = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
             this.lblPlayer1Legs = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPlayer2Legs = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblAvg1 = new System.Windows.Forms.Label();
+            this.lblDartsThrown1 = new System.Windows.Forms.Label();
+            this.lblLastScore1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblAvg2 = new System.Windows.Forms.Label();
+            this.lblDartsThrown2 = new System.Windows.Forms.Label();
+            this.lblLastScore2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -99,7 +99,7 @@ namespace GIP_GUI_Dartbord
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.ForeColor = System.Drawing.Color.White;
-            this.btn9.Location = new System.Drawing.Point(233, 231);
+            this.btn9.Location = new System.Drawing.Point(235, 231);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(110, 108);
             this.btn9.TabIndex = 8;
@@ -114,7 +114,7 @@ namespace GIP_GUI_Dartbord
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.Color.White;
-            this.btn8.Location = new System.Drawing.Point(118, 231);
+            this.btn8.Location = new System.Drawing.Point(119, 231);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(109, 108);
             this.btn8.TabIndex = 7;
@@ -144,7 +144,7 @@ namespace GIP_GUI_Dartbord
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.Color.White;
-            this.btn6.Location = new System.Drawing.Point(233, 117);
+            this.btn6.Location = new System.Drawing.Point(235, 117);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(110, 108);
             this.btn6.TabIndex = 5;
@@ -159,7 +159,7 @@ namespace GIP_GUI_Dartbord
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.White;
-            this.btn5.Location = new System.Drawing.Point(118, 117);
+            this.btn5.Location = new System.Drawing.Point(119, 117);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(109, 108);
             this.btn5.TabIndex = 4;
@@ -189,7 +189,7 @@ namespace GIP_GUI_Dartbord
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.White;
-            this.btn3.Location = new System.Drawing.Point(233, 3);
+            this.btn3.Location = new System.Drawing.Point(235, 3);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(110, 108);
             this.btn3.TabIndex = 2;
@@ -204,7 +204,7 @@ namespace GIP_GUI_Dartbord
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.White;
-            this.btn2.Location = new System.Drawing.Point(118, 3);
+            this.btn2.Location = new System.Drawing.Point(119, 3);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(109, 108);
             this.btn2.TabIndex = 1;
@@ -227,6 +227,36 @@ namespace GIP_GUI_Dartbord
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Click += new System.EventHandler(this.Click_NumPad);
+            // 
+            // btn0
+            // 
+            this.btn0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btn0.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn0.ForeColor = System.Drawing.Color.White;
+            this.btn0.Location = new System.Drawing.Point(119, 345);
+            this.btn0.Name = "btn0";
+            this.btn0.Size = new System.Drawing.Size(109, 108);
+            this.btn0.TabIndex = 9;
+            this.btn0.Text = "0";
+            this.btn0.UseVisualStyleBackColor = false;
+            this.btn0.Click += new System.EventHandler(this.Click_NumPad);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Black;
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(235, 345);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(109, 108);
+            this.btnBack.TabIndex = 10;
+            this.btnBack.Text = "";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.Click_NumPad);
             // 
             // lblPlayer2
             // 
@@ -263,21 +293,6 @@ namespace GIP_GUI_Dartbord
             this.txtScore.Text = "Score";
             this.txtScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btn0
-            // 
-            this.btn0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btn0.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn0.ForeColor = System.Drawing.Color.White;
-            this.btn0.Location = new System.Drawing.Point(118, 345);
-            this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(109, 108);
-            this.btn0.TabIndex = 9;
-            this.btn0.Text = "0";
-            this.btn0.UseVisualStyleBackColor = false;
-            this.btn0.Click += new System.EventHandler(this.Click_NumPad);
-            // 
             // btnEnter
             // 
             this.btnEnter.BackColor = System.Drawing.Color.RoyalBlue;
@@ -291,6 +306,7 @@ namespace GIP_GUI_Dartbord
             this.btnEnter.TabIndex = 9;
             this.btnEnter.Text = "➜";
             this.btnEnter.UseVisualStyleBackColor = false;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // btnPrevious
             // 
@@ -305,21 +321,6 @@ namespace GIP_GUI_Dartbord
             this.btnPrevious.TabIndex = 8;
             this.btnPrevious.UseVisualStyleBackColor = false;
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Black;
-            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(233, 345);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(109, 108);
-            this.btnBack.TabIndex = 10;
-            this.btnBack.Text = "";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.Click_NumPad);
-            // 
             // lblPlayer1Legs
             // 
             this.lblPlayer1Legs.BackColor = System.Drawing.Color.RoyalBlue;
@@ -332,26 +333,26 @@ namespace GIP_GUI_Dartbord
             this.lblPlayer1Legs.Text = "legs: 0";
             this.lblPlayer1Legs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblPlayer2Legs
             // 
-            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(198, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 33);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "legs: 0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPlayer2Legs.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblPlayer2Legs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer2Legs.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer2Legs.Location = new System.Drawing.Point(198, 22);
+            this.lblPlayer2Legs.Name = "lblPlayer2Legs";
+            this.lblPlayer2Legs.Size = new System.Drawing.Size(109, 33);
+            this.lblPlayer2Legs.TabIndex = 11;
+            this.lblPlayer2Legs.Text = "legs: 0";
+            this.lblPlayer2Legs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblAvg1, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblDartsThrown1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblLastScore1, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 116);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
@@ -361,47 +362,47 @@ namespace GIP_GUI_Dartbord
             this.tableLayoutPanel2.Size = new System.Drawing.Size(161, 105);
             this.tableLayoutPanel2.TabIndex = 12;
             // 
-            // label2
+            // lblAvg1
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 34);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Last score: -";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAvg1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAvg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvg1.Location = new System.Drawing.Point(3, 70);
+            this.lblAvg1.Name = "lblAvg1";
+            this.lblAvg1.Size = new System.Drawing.Size(155, 35);
+            this.lblAvg1.TabIndex = 2;
+            this.lblAvg1.Text = "3-dart avg.: 0.00";
+            this.lblAvg1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // lblDartsThrown1
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 34);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Dart thrown: 0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDartsThrown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDartsThrown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDartsThrown1.Location = new System.Drawing.Point(3, 35);
+            this.lblDartsThrown1.Name = "lblDartsThrown1";
+            this.lblDartsThrown1.Size = new System.Drawing.Size(155, 35);
+            this.lblDartsThrown1.TabIndex = 1;
+            this.lblDartsThrown1.Text = "Dart thrown: 0";
+            this.lblDartsThrown1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // lblLastScore1
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 37);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "3-dart avg.: 0.00";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLastScore1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLastScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastScore1.Location = new System.Drawing.Point(3, 0);
+            this.lblLastScore1.Name = "lblLastScore1";
+            this.lblLastScore1.Size = new System.Drawing.Size(155, 35);
+            this.lblLastScore1.TabIndex = 0;
+            this.lblLastScore1.Text = "Last score: -";
+            this.lblLastScore1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblAvg2, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblDartsThrown2, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblLastScore2, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(170, 116);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
@@ -412,38 +413,38 @@ namespace GIP_GUI_Dartbord
             this.tableLayoutPanel3.Size = new System.Drawing.Size(173, 105);
             this.tableLayoutPanel3.TabIndex = 13;
             // 
-            // label5
+            // lblAvg2
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 37);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "3-dart avg.: 0.00";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAvg2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAvg2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvg2.Location = new System.Drawing.Point(3, 70);
+            this.lblAvg2.Name = "lblAvg2";
+            this.lblAvg2.Size = new System.Drawing.Size(167, 35);
+            this.lblAvg2.TabIndex = 2;
+            this.lblAvg2.Text = "3-dart avg.: 0.00";
+            this.lblAvg2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // lblDartsThrown2
             // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 34);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Dart thrown: 0";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDartsThrown2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDartsThrown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDartsThrown2.Location = new System.Drawing.Point(3, 35);
+            this.lblDartsThrown2.Name = "lblDartsThrown2";
+            this.lblDartsThrown2.Size = new System.Drawing.Size(167, 35);
+            this.lblDartsThrown2.TabIndex = 1;
+            this.lblDartsThrown2.Text = "Dart thrown: 0";
+            this.lblDartsThrown2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // lblLastScore2
             // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(167, 34);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Last score: -";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLastScore2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLastScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastScore2.Location = new System.Drawing.Point(3, 0);
+            this.lblLastScore2.Name = "lblLastScore2";
+            this.lblLastScore2.Size = new System.Drawing.Size(167, 35);
+            this.lblLastScore2.TabIndex = 0;
+            this.lblLastScore2.Text = "Last score: -";
+            this.lblLastScore2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Frm501Game
             // 
@@ -454,7 +455,7 @@ namespace GIP_GUI_Dartbord
             this.ClientSize = new System.Drawing.Size(345, 726);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPlayer2Legs);
             this.Controls.Add(this.lblPlayer1Legs);
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.btnPrevious);
@@ -497,14 +498,14 @@ namespace GIP_GUI_Dartbord
         private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblPlayer1Legs;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPlayer2Legs;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAvg1;
+        private System.Windows.Forms.Label lblDartsThrown1;
+        private System.Windows.Forms.Label lblLastScore1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblAvg2;
+        private System.Windows.Forms.Label lblDartsThrown2;
+        private System.Windows.Forms.Label lblLastScore2;
     }
 }

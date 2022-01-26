@@ -35,7 +35,7 @@ namespace GIP_GUI_Dartbord
             // 
             // btn501Game
             // 
-            this.btn501Game.Location = new System.Drawing.Point(137, 135);
+            this.btn501Game.Location = new System.Drawing.Point(21, 12);
             this.btn501Game.Name = "btn501Game";
             this.btn501Game.Size = new System.Drawing.Size(190, 105);
             this.btn501Game.TabIndex = 0;
@@ -47,7 +47,8 @@ namespace GIP_GUI_Dartbord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(1014, 724);
             this.Controls.Add(this.btn501Game);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -23,9 +23,11 @@ namespace GIP_GUI_Dartbord
             this.Hide();
         }
         string[] display = { null, null, null };
+        int score;
         int count = 0;
         private void Click_NumPad(object sender, EventArgs e)
         {
+            txtScore.BackColor = Color.White;
             Button btnNumber = sender as Button;
             if (count < 4&&btnNumber.Text!= "") count++;
             if (btnNumber != null)
@@ -103,9 +105,81 @@ namespace GIP_GUI_Dartbord
                         break;
                 }//display of numbers
             }
+            string Score = display[0] + display[1] + display[2];
             txtScore.ForeColor = Color.Black;
-            txtScore.Text = display[0] + display[1] + display[2];
+            txtScore.Text = Score;
+            if(Score=="")
+            {
+                score = 0;
+            }
+            else
+            {
+                score = Int32.Parse(Score);
+            }          
         }
-    
+        int player = 1;
+        int starterPlayer = 1;
+        int legsplayer1=0, legsplayer2=0;
+        int player1_score = 501, player2_score = 501;
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            if(score<181)
+            {
+                if (player == 1)
+                {
+                    if(score==player1_score)
+                    {
+                        player1_score = 501;
+                        player2_score = 501;
+                        lblPlayer1Legs.Text = "legs: " + legsplayer1++;
+                        if(starterPlayer==1)
+                        {
+                            starterPlayer++;
+                        }
+                        else
+                        {
+                            starterPlayer--;
+                        }
+                    }
+                    else
+                    {
+                        player1_score -= score;
+                        player++;  
+                    }
+                    lblLastScore1.Text = "Last score: " + score.ToString();
+                }
+                else if (player == 2)
+                {
+                    if (score == player2_score)
+                    {
+                        player1_score = 501;
+                        player2_score = 501;
+                        lblPlayer2Legs.Text = "legs: " + legsplayer2++;
+                        if (starterPlayer == 1)
+                        {
+                            starterPlayer++;
+                        }
+                        else
+                        {
+                            starterPlayer--;
+                        }
+                    }
+                    else
+                    {
+                        player2_score -= score;
+                        player--;
+                    }
+                    lblLastScore2.Text = "Last score: " + score.ToString();
+                }
+                lblPlayer1.Text = player1_score.ToString();
+                lblPlayer2.Text = player2_score.ToString();
+            }
+            else
+            {
+                txtScore.BackColor = Color.Red;
+                txtScore.Text = "";               
+            }
+            display[0] = null; display[1] = null; display[2] = null; count = 0;
+        }
     }
 }
