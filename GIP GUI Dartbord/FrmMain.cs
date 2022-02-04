@@ -29,10 +29,11 @@ namespace GIP_GUI_Dartbord
 
         private void btnRotate_Click(object sender, EventArgs e)
         {
-            string Data = "1";
+
+            char[] data = new char[] { '1' };
             try
             {
-                serial.WriteLine(Data);
+                serial.Write(data, 0,data.Length);
                 
             }
             catch (UnauthorizedAccessException)
