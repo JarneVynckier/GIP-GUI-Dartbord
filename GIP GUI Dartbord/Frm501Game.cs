@@ -116,30 +116,41 @@ namespace GIP_GUI_Dartbord
             {
                 score = Int32.Parse(Score);
             }          
+        }       
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (player == 1)
+            {
+                player1_score += player1_scores[i1];
+                i1--;
+            }
+            if(player==2)
+            {
+                player2_score += player2_scores[i2];
+                i2--;
+            }
         }
         int player = 1;
-        int starterPlayer = 1;
-        int legsplayer1=0, legsplayer2=0;
+        int legsplayer1 = 0, legsplayer2 = 0;
         int player1_score = 501, player2_score = 501;
+        List<int> player1_scores = new List<int>();
+        List<int> player2_scores = new List<int>();
+        int i1 = 0;
+        int i2 =0;
         private void btnEnter_Click(object sender, EventArgs e)
-        {
-            if(score<181)
+        {           
+            if (score<181)
             {
                 if (player == 1)
                 {
+                    i1++;
+                    player1_scores.Add(score);
                     if(score==player1_score)
                     {
                         player1_score = 501;
                         player2_score = 501;
                         lblPlayer1Legs.Text = "legs: " + legsplayer1++;
-                        if(starterPlayer==1)
-                        {
-                            starterPlayer++;
-                        }
-                        else
-                        {
-                            starterPlayer--;
-                        }
+                        player = 2;                        
                     }
                     else
                     {
@@ -150,19 +161,14 @@ namespace GIP_GUI_Dartbord
                 }
                 else if (player == 2)
                 {
+                    i2++;
+                    player2_scores.Add(score);
                     if (score == player2_score)
                     {
                         player1_score = 501;
                         player2_score = 501;
                         lblPlayer2Legs.Text = "legs: " + legsplayer2++;
-                        if (starterPlayer == 1)
-                        {
-                            starterPlayer++;
-                        }
-                        else
-                        {
-                            starterPlayer--;
-                        }
+                        player = 1;
                     }
                     else
                     {

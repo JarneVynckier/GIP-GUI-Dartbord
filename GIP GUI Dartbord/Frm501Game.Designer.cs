@@ -320,6 +320,7 @@ namespace GIP_GUI_Dartbord
             this.btnPrevious.Size = new System.Drawing.Size(80, 45);
             this.btnPrevious.TabIndex = 8;
             this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // lblPlayer1Legs
             // 
