@@ -288,6 +288,7 @@ namespace GIP_GUI_Dartbord
             this.txtScore.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtScore.Location = new System.Drawing.Point(89, 222);
             this.txtScore.Name = "txtScore";
+            this.txtScore.ReadOnly = true;
             this.txtScore.Size = new System.Drawing.Size(159, 45);
             this.txtScore.TabIndex = 7;
             this.txtScore.Text = "Score";
@@ -382,7 +383,7 @@ namespace GIP_GUI_Dartbord
             this.lblDartsThrown1.Name = "lblDartsThrown1";
             this.lblDartsThrown1.Size = new System.Drawing.Size(155, 35);
             this.lblDartsThrown1.TabIndex = 1;
-            this.lblDartsThrown1.Text = "Dart thrown: 0";
+            this.lblDartsThrown1.Text = "Darts thrown: 0";
             this.lblDartsThrown1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLastScore1
@@ -433,7 +434,7 @@ namespace GIP_GUI_Dartbord
             this.lblDartsThrown2.Name = "lblDartsThrown2";
             this.lblDartsThrown2.Size = new System.Drawing.Size(167, 35);
             this.lblDartsThrown2.TabIndex = 1;
-            this.lblDartsThrown2.Text = "Dart thrown: 0";
+            this.lblDartsThrown2.Text = "Darts thrown: 0";
             this.lblDartsThrown2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLastScore2

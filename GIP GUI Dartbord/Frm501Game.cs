@@ -24,7 +24,7 @@ namespace GIP_GUI_Dartbord
             display[0] = null; display[1] = null; display[2] = null;
             score = 0; count = 0;
             i1 = 0; i2 = 0;
-            player = 1;
+            player = 1;starterplayer = 1;legwinner = 0;
             legsplayer1 = 0;legsplayer2 = 0;
             player1_score = 501;player2_score = 501;
             player1_scores.Clear();player2_scores.Clear();
@@ -131,7 +131,7 @@ namespace GIP_GUI_Dartbord
                 score = Int32.Parse(Score);
             }          
         }
-        int player = 1;
+        int player = 1;int starterplayer = 1;int legwinner=0;
         int legsplayer1 = 0, legsplayer2 = 0;
         int player1_score = 501, player2_score = 501;
         List<int> player1_scores = new List<int>();
@@ -149,25 +149,56 @@ namespace GIP_GUI_Dartbord
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
-        {
-           
-            
+        {        
             if (player == 2)
             {   
                 if(i1!=0)
                 {
-                    player--;
-                    i1--;
-                    player1_score = player1_scores.ElementAt(i1);
+                   
+                    if(player1_score==501)
+                    {
+                        i1--;i2--;
+                        player1_score = player1_scores.ElementAt(i1);
+                        player2_score = player2_scores.ElementAt(i2);
+                        if(legwinner==1)
+                        {
+                            if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
+                            player = 1;
+                            legsplayer1--;
+                            lblPlayer1Legs.Text = "legs: " + legsplayer1.ToString();
+                        }                                    
+                    }
+                    else 
+                    {
+                        i1--;
+                        player1_score = player1_scores.ElementAt(i1);
+                        player--;
+                    }                                  
                 }                
             }
             else
             {      
                 if (i2 != 0)
                 {
-                    player++;
-                    i2--;
-                    player2_score = player2_scores.ElementAt(i2);
+                    if (player2_score == 501)
+                    {
+                        i1--; i2--;
+                        player1_score = player1_scores.ElementAt(i1);
+                        player2_score = player2_scores.ElementAt(i2);
+                        if (legwinner == 2)
+                        {
+                            if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
+                            player = 2;
+                            legsplayer2--;
+                            lblPlayer2Legs.Text = "legs: " + legsplayer2.ToString();
+                        }                                         
+                    }
+                    else
+                    {
+                        i2--;
+                        player2_score = player2_scores.ElementAt(i2);
+                        player++;
+                    }
                 }                  
             }
             lblPlayer1.Text = player1_score.ToString();
@@ -183,23 +214,37 @@ namespace GIP_GUI_Dartbord
                 if (player == 1)
                 {                 
                     if (score==player1_score)
-                    {
+                    {                       
                         player1_score = 501;
+                        player1_scores.Add(player1_score);
+                        i1++;
                         player2_score = 501;
+                        player2_scores.Add(player2_score);
+                        i2++;
+                        legwinner = 1;
                         legsplayer1++;
                         lblPlayer1Legs.Text = "legs: " + legsplayer1.ToString();
-                        player = 2;                        
+                        if(starterplayer==1)
+                        {
+                            player = 2;
+                            starterplayer = 2;
+                        }
+                        else 
+                        {
+                            player = 1;
+                            starterplayer = 1;
+                        }                        
                     }
                     else
                     {
                         player1_score -= score;
-                        player++;  
+                        player++;
+                        player1_scores.Add(player1_score);
+                        i1++;
                     }
                     lblLastScore1.Text = "Last score: " + score.ToString();
                     player1_lastDarts.Add(score);
-                    player1_scores.Add(player1_score);
-                    player2_scores.Add(player2_score);
-                    i1++;
+
                     
                 }
                 else if (player == 2)
@@ -209,20 +254,34 @@ namespace GIP_GUI_Dartbord
                     if (score == player2_score)
                     {
                         player1_score = 501;
+                        player1_scores.Add(player1_score);
+                        i1++;
                         player2_score = 501;
-                        lblPlayer2Legs.Text = "legs: " + legsplayer2++;
-                        player = 1;
+                        player2_scores.Add(player2_score);
+                        i2++;
+                        legwinner = 2;
+                        legsplayer2++;
+                        lblPlayer2Legs.Text = "legs: " + legsplayer2.ToString();
+                        if(starterplayer == 1)
+                        {
+                            player = 2;
+                            starterplayer = 2;
+                        }
+                        else
+                        {
+                            player = 1;
+                            starterplayer = 1;
+                        }
                     }
                     else
                     {
                         player2_score -= score;
                         player--;
+                        player2_scores.Add(player2_score);
+                        i2++;
                     }
                     lblLastScore2.Text = "Last score: " + score.ToString();
-                    player2_lastDarts.Add(score);
-                    player2_scores.Add(player2_score);
-                    player1_scores.Add(player1_score);
-                    i2++;
+                    player2_lastDarts.Add(score);              
                 }
                 lblPlayer1.Text = player1_score.ToString();
                 lblPlayer2.Text = player2_score.ToString();
