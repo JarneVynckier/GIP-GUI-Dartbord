@@ -153,20 +153,16 @@ namespace GIP_GUI_Dartbord
             if (player == 2)
             {   
                 if(i1!=0)
-                {
-                   
-                    if(player1_score==501)
+                {                  
+                    if(player1_score==501&&legwinner==1)
                     {
-                        i1--;i2--;
+                        i1--;i2--; 
                         player1_score = player1_scores.ElementAt(i1);
-                        player2_score = player2_scores.ElementAt(i2);
-                        if(legwinner==1)
-                        {
-                            if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
-                            player = 1;
-                            legsplayer1--;
-                            lblPlayer1Legs.Text = "legs: " + legsplayer1.ToString();
-                        }                                    
+                        player2_score = player2_scores.ElementAt(i2);                     
+                        if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
+                        player = 1;
+                        legsplayer1--;
+                        lblPlayer1Legs.Text = "legs: " + legsplayer1.ToString();                                                        
                     }
                     else 
                     {
@@ -180,18 +176,15 @@ namespace GIP_GUI_Dartbord
             {      
                 if (i2 != 0)
                 {
-                    if (player2_score == 501)
+                    if (player2_score == 501&&legwinner==2)
                     {
-                        i1--; i2--;
+                        i2--; i1--;
                         player1_score = player1_scores.ElementAt(i1);
-                        player2_score = player2_scores.ElementAt(i2);
-                        if (legwinner == 2)
-                        {
-                            if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
-                            player = 2;
-                            legsplayer2--;
-                            lblPlayer2Legs.Text = "legs: " + legsplayer2.ToString();
-                        }                                         
+                        player2_score = player2_scores.ElementAt(i2);                      
+                        if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
+                        player = 2;
+                        legsplayer2--;
+                        lblPlayer2Legs.Text = "legs: " + legsplayer2.ToString();                                                             
                     }
                     else
                     {
@@ -207,8 +200,7 @@ namespace GIP_GUI_Dartbord
         }
        
         private void btnEnter_Click(object sender, EventArgs e)
-        {
-        
+        {     
             if (score<181)
             {
                 if (player == 1)
@@ -247,10 +239,8 @@ namespace GIP_GUI_Dartbord
 
                     
                 }
-                else if (player == 2)
-                {
-                    
-                    
+                else
+                {                   
                     if (score == player2_score)
                     {
                         player1_score = 501;
