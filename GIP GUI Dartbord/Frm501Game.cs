@@ -131,7 +131,7 @@ namespace GIP_GUI_Dartbord
                 score = Int32.Parse(Score);
             }          
         }
-        int player = 1;int starterplayer = 1;int legwinner=0;
+        int player = 1;int starterplayer = 1;int legwinner=0;bool Break=false;
         int legsplayer1 = 0, legsplayer2 = 0;
         int player1_score = 501, player2_score = 501;
         List<int> player1_scores = new List<int>();
@@ -156,9 +156,11 @@ namespace GIP_GUI_Dartbord
                 {                  
                     if(player1_score==501&&legwinner==1)
                     {
+                        
                         i1--;i2--; 
                         player1_score = player1_scores.ElementAt(i1);
-                        player2_score = player2_scores.ElementAt(i2);                     
+                        player2_score = player2_scores.ElementAt(i2);
+                        if (Break == true) i1--; Break = false;
                         if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
                         player = 1;
                         legsplayer1--;
@@ -178,9 +180,11 @@ namespace GIP_GUI_Dartbord
                 {
                     if (player2_score == 501&&legwinner==2)
                     {
+                        
                         i2--; i1--;
                         player1_score = player1_scores.ElementAt(i1);
-                        player2_score = player2_scores.ElementAt(i2);                      
+                        player2_score = player2_scores.ElementAt(i2);
+                        if (Break == true) i2--; Break = false;
                         if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
                         player = 2;
                         legsplayer2--;
@@ -195,10 +199,8 @@ namespace GIP_GUI_Dartbord
                 }                  
             }
             lblPlayer1.Text = player1_score.ToString();
-            lblPlayer2.Text = player2_score.ToString();
-                      
-        }
-       
+            lblPlayer2.Text = player2_score.ToString();                      
+        }      
         private void btnEnter_Click(object sender, EventArgs e)
         {     
             if (score<181)
@@ -215,7 +217,7 @@ namespace GIP_GUI_Dartbord
                         i2++;
                         legwinner = 1;
                         legsplayer1++;
-                        lblPlayer1Legs.Text = "legs: " + legsplayer1.ToString();
+                        lblPlayer1Legs.Text = "legs: " + legsplayer1.ToString();                      
                         if(starterplayer==1)
                         {
                             player = 2;
@@ -225,7 +227,9 @@ namespace GIP_GUI_Dartbord
                         {
                             player = 1;
                             starterplayer = 1;
-                        }                        
+                            Break= true;
+                        }
+                        
                     }
                     else
                     {
@@ -256,6 +260,7 @@ namespace GIP_GUI_Dartbord
                         {
                             player = 2;
                             starterplayer = 2;
+                            Break = true;
                         }
                         else
                         {
