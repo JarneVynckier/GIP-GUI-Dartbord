@@ -16,7 +16,6 @@ namespace GIP_GUI_Dartbord
         {
             InitializeComponent();
         }
-
         private void FrmMain_Load(object sender, EventArgs e)
         {
 
@@ -26,15 +25,12 @@ namespace GIP_GUI_Dartbord
         {
             frm501Game.ShowDialog();
         }
-
         private void btnRotate_Click(object sender, EventArgs e)
         {
-
             char[] data = new char[] { '1' };
             try
             {
-                serial.Write(data, 0,data.Length);
-                
+                serial.Write(data, 0,data.Length);               
             }
             catch (UnauthorizedAccessException)
             {
@@ -45,7 +41,6 @@ namespace GIP_GUI_Dartbord
                 MessageBox.Show(ex.ToString());
             }
         }
-
         private void btnZoekSerial_Click(object sender, EventArgs e)
         {
             lstPoort.Items.Clear();
@@ -54,7 +49,6 @@ namespace GIP_GUI_Dartbord
             foreach (string poort in ports)
                 lstPoort.Items.Add(poort);
         }
-
         private void lstPoort_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstPoort.SelectedIndex == -1) return;
@@ -69,8 +63,7 @@ namespace GIP_GUI_Dartbord
                 {
                     lblVerbinding.Text = "Er is verbinding!";
                     lblVerbinding.ForeColor = Color.Green;
-                }
-                
+                }               
             }
             catch (System.Exception ex)
             {
