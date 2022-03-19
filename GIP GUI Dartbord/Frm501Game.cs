@@ -15,7 +15,9 @@ namespace GIP_GUI_Dartbord
         string[] display = { null, null, null };
         int score;
         int displayIndex = 0;
+        int loserScore = 0;
         const int maxScorePerThrow = 180;
+        bool breakLeg = false;
 
         private readonly Player playerOne;
         private readonly Player playerTwo;
@@ -67,8 +69,9 @@ namespace GIP_GUI_Dartbord
                         if (displayIndex > 0) displayIndex--;
                         break;
 
-                }//display of numbers
-            }
+                }
+
+            }//display of numbers
 
             string Score = display[0] + display[1] + display[2];
             txtScore.ForeColor = Color.Black;
@@ -83,201 +86,118 @@ namespace GIP_GUI_Dartbord
             }
         }
 
-        int player = 1; int starterplayer = 1; int legwinner = 0; bool Break = false;
-        int legsplayer1 = 0, legsplayer2 = 0;
-        int player1_score = 501, player2_score = 501;
-        List<int> player1_scores = new List<int>();
-        List<int> player2_scores = new List<int>();
-        List<int> player1_lastDarts = new List<int>();
-        List<int> player2_lastDarts = new List<int>();
-        int i1 = 0; int i2 = 0;
-
         private void Frm501Game_Load(object sender, EventArgs e)
         {
-            player1_scores.Add(501);
-            player2_scores.Add(501);
-            player1_lastDarts.Add(0);
-            player2_lastDarts.Add(0);
+
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (player == 2)
+            if (playerOne.ScoresIndex >= 0 || playerTwo.ScoresIndex >= 0)
             {
-                if (i1 != 0)
-                {
-                    if (player1_score == 501 && legwinner == 1)
-                    {
+                currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
+            }
 
-                        i1--; i2--;
-                        player1_score = player1_scores.ElementAt(i1);
-                        player2_score = player2_scores.ElementAt(i2);
-                        if (Break == true) i1--; Break = false;
-                        if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
-                        player = 1;
-                        legsplayer1--;
-                        lblPlayer1Legs.Text = "legs: " + legsplayer1.ToString();
+            if (currentPlayer.ScoresIndex != -1)
+            {
+                if (playerOne.RemainingScore == 501 && playerTwo.RemainingScore == 501)
+                {
+                    currentPlayer = startPlayer == playerOne ? playerTwo : playerOne;
+                    startPlayer = startPlayer == playerOne ? playerTwo : playerOne;
+                    if (breakLeg == true)
+                    {
+                        currentPlayer.RemainingScore = loserScore;
+                        currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
+                        currentPlayer.RemainingScore = currentPlayer.Scores.ElementAt(currentPlayer.ScoresIndex);
                     }
                     else
                     {
-                        i1--;
-                        player1_score = player1_scores.ElementAt(i1);
-                        player--;
+                        currentPlayer.RemainingScore = currentPlayer.Scores.ElementAt(currentPlayer.ScoresIndex);
+                        currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
+                        currentPlayer.RemainingScore = loserScore;
+                        currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
                     }
+                    currentPlayer.Legs -= 1;
                 }
-            }
-            else
-            {
-                if (i2 != 0)
+                else
                 {
-                    if (player2_score == 501 && legwinner == 2)
-                    {
-
-                        i2--; i1--;
-                        player1_score = player1_scores.ElementAt(i1);
-                        player2_score = player2_scores.ElementAt(i2);
-                        if (Break == true) i2--; Break = false;
-                        if (starterplayer == 1) starterplayer = 2; else starterplayer = 1;
-                        player = 2;
-                        legsplayer2--;
-                        lblPlayer2Legs.Text = "legs: " + legsplayer2.ToString();
-                    }
-                    else
-                    {
-                        i2--;
-                        player2_score = player2_scores.ElementAt(i2);
-                        player++;
-                    }
+                    //currentPlayer.DartsThrown -= 3;
+                    currentPlayer.RemainingScore += currentPlayer.Scores.ElementAt(currentPlayer.ScoresIndex);
                 }
+                currentPlayer.Scores.RemoveAt(currentPlayer.ScoresIndex);
+                currentPlayer.ScoresIndex--;
             }
-            lblPlayer1.Text = player1_score.ToString();
-            lblPlayer2.Text = player2_score.ToString();
+            UpdateScore();
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-
-            if (score <= maxScorePerThrow)
+            if (score <= maxScorePerThrow && currentPlayer.RemainingScore >= score)
             {
+                currentPlayer.Scores.Add(score);
+                currentPlayer.ScoresIndex++;
                 if (currentPlayer.RemainingScore == score)
                 {
-                    ResetScore();
-                    currentPlayer.Legs += 1;
+                    Winner();
+                    if (startPlayer != currentPlayer)
+                    {
+                        breakLeg = true;
+                    }
                     currentPlayer = startPlayer == playerOne ? playerTwo : playerOne;
                     startPlayer = startPlayer == playerOne ? playerTwo : playerOne;
+                    if (breakLeg == true)
+                    {
+                        currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
+                        loserScore = currentPlayer.RemainingScore;
+                        currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
+                    }
+                    else
+                    {
+                        loserScore = currentPlayer.RemainingScore;
+                    }
+                    ResetScore();
                 }
                 else
                 {
                     currentPlayer.RemainingScore -= score;
-
+                    //currentPlayer.DartsThrown += 3;
                     currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
+                    
                 }
-
-
-
-                //    if (player == 1)
-                //    {
-                //        if (score == player1_score)
-                //        {
-                //            player1_score = 501;
-                //            player1_scores.Add(player1_score);
-                //            i1++;
-                //            player2_score = 501;
-                //            player2_scores.Add(player2_score);
-                //            i2++;
-                //            legwinner = 1;
-                //            legsplayer1++;
-                //            lblPlayer1Legs.Text = "legs: " + legsplayer1.ToString();
-                //            if (starterplayer == 1)
-                //            {
-                //                player = 2;
-                //                starterplayer = 2;
-                //            }
-                //            else
-                //            {
-                //                player = 1;
-                //                starterplayer = 1;
-                //                Break = true;
-                //            }
-
-                //        }
-                //        else
-                //        {
-                //            player1_score -= score;
-                //            player++;
-                //            player1_scores.Add(player1_score);
-                //            i1++;
-                //        }
-                //        lblLastScore1.Text = "Last score: " + score.ToString();
-                //        player1_lastDarts.Add(score);
-
-
-                //    }
-                //    else
-                //    {
-                //        if (score == player2_score)
-                //        {
-                //            player1_score = 501;
-                //            player1_scores.Add(player1_score);
-                //            i1++;
-                //            player2_score = 501;
-                //            player2_scores.Add(player2_score);
-                //            i2++;
-                //            legwinner = 2;
-                //            legsplayer2++;
-                //            lblPlayer2Legs.Text = "legs: " + legsplayer2.ToString();
-                //            if (starterplayer == 1)
-                //            {
-                //                player = 2;
-                //                starterplayer = 2;
-                //                Break = true;
-                //            }
-                //            else
-                //            {
-                //                player = 1;
-                //                starterplayer = 1;
-                //            }
-                //        }
-                //        else
-                //        {
-                //            player2_score -= score;
-                //            player--;
-                //            player2_scores.Add(player2_score);
-                //            i2++;
-                //        }
-                //        lblLastScore2.Text = "Last score: " + score.ToString();
-                //        player2_lastDarts.Add(score);
-                //    }
-                //    lblPlayer1.Text = player1_score.ToString();
-                //    lblPlayer2.Text = player2_score.ToString();
-                //    txtScore.Text = "Score"; txtScore.ForeColor = Color.Gray;
-                //    score = 0;
             }
             else
             {
                 txtScore.BackColor = Color.Red;
                 txtScore.Text = "";
             }
+
             UpdateScore();
             ResetDisplay();
         }
-        public void LegWinner()
-        {
 
+        public void Winner()
+        {
+            currentPlayer.Legs += 1;
         }
+
         private void UpdateScore()
         {
             lblPlayer1.Text = playerOne.RemainingScore.ToString();
             lblPlayer2.Text = playerTwo.RemainingScore.ToString();
             lblPlayer1Legs.Text = "legs: " + playerOne.Legs.ToString();
             lblPlayer2Legs.Text = "legs: " + playerTwo.Legs.ToString();
-
+            lblDartsThrown1.Text = "Darts thrown: " + playerOne.DartsThrown.ToString();
+            lblDartsThrown2.Text = "Darts thrown: " + playerTwo.DartsThrown.ToString();
         }
+
         private void ResetScore()
         {
             playerOne.RemainingScore = 501;
             playerTwo.RemainingScore = 501;
+            playerOne.DartsThrown = 0;
+            playerTwo.DartsThrown = 0;
         }
+
         private void ResetDisplay()
         {
             display[0] = null;
@@ -285,42 +205,43 @@ namespace GIP_GUI_Dartbord
             display[2] = null;
             displayIndex = 0;
             score = 0;
-            txtScore.Text = "Score"; 
+            txtScore.Text = "Score";
             txtScore.ForeColor = Color.Gray;
         }
+
+        private void ResetScores()
+        {
+            playerOne.Scores.Clear();
+            playerTwo.Scores.Clear();
+            playerOne.RemainingScore = 501;
+            playerTwo.RemainingScore = 501;
+            playerOne.ScoresIndex = -1;
+            playerTwo.ScoresIndex = -1;
+            playerOne.Legs = 0;
+            playerTwo.Legs = 0;
+        }
+
         private void ResetGame()
         {
             ResetDisplay();
+            ResetScores();
 
             score = 0;
-            player = 1;
-            starterplayer = 1;
-            legwinner = 0;
 
-            i1 = 0;
-            legsplayer1 = 0;
-            player1_score = 501;
-            player1_scores.Clear();
-            player1_lastDarts.Clear();
             lblPlayer1.Text = "501";
             lblPlayer1Legs.Text = "legs: 0";
             lblLastScore1.Text = "Last score: -";
             lblDartsThrown1.Text = "Darts thrown: 0";
             lblAvg1.Text = "3-dart avg.: 0.00";
 
-            i2 = 0;
-            legsplayer2 = 0;
-            player2_score = 501;
-            player2_scores.Clear();
-            player2_lastDarts.Clear();
+
             lblPlayer2.Text = "501";
             lblPlayer2Legs.Text = "legs: 0";
             lblLastScore2.Text = "Last score: -";
             lblDartsThrown2.Text = "Darts thrown: 0";
             lblAvg2.Text = "3-dart avg.: 0.00";
 
-            
-        }
 
+        }
     }
 }
