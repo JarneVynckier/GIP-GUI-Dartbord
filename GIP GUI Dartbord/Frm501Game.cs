@@ -12,10 +12,11 @@ namespace GIP_GUI_Dartbord
 {
     public partial class Frm501Game : Form
     {
-        string[] display = { null, null, null };
+        readonly string[] display = { null, null, null };
         int score;
         int displayIndex = 0;
-        int loserScore = 0;
+        //int[] loserScores;
+        //int loserScoresIndex = 0;
         const int maxScorePerThrow = 180;
         bool breakLeg = false;
 
@@ -29,6 +30,7 @@ namespace GIP_GUI_Dartbord
             InitializeComponent();
             playerOne = new Player();
             playerTwo = new Player();
+            
             currentPlayer = playerOne;
             startPlayer = playerOne;
 
@@ -102,26 +104,32 @@ namespace GIP_GUI_Dartbord
             {
                 if (playerOne.RemainingScore == 501 && playerTwo.RemainingScore == 501)
                 {
+                    //loserScoresIndex--;
                     currentPlayer = startPlayer == playerOne ? playerTwo : playerOne;
                     startPlayer = startPlayer == playerOne ? playerTwo : playerOne;
                     if (breakLeg == true)
                     {
-                        currentPlayer.RemainingScore = loserScore;
+                        //currentPlayer.RemainingScore = loserScores.ElementAt(loserScoresIndex);
                         currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
                         currentPlayer.RemainingScore = currentPlayer.Scores.ElementAt(currentPlayer.ScoresIndex);
+                        
                     }
                     else
                     {
                         currentPlayer.RemainingScore = currentPlayer.Scores.ElementAt(currentPlayer.ScoresIndex);
                         currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
-                        currentPlayer.RemainingScore = loserScore;
+                        //currentPlayer.RemainingScore = loserScores.ElementAt(loserScoresIndex);
                         currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
+                        
                     }
+                    //loserScores.RemoveAt(loserScoresIndex);
+                    breakLeg = false;
                     currentPlayer.Legs -= 1;
+                    EndOfLegDartsThrownPrevious();                
                 }
                 else
                 {
-                    //currentPlayer.DartsThrown -= 3;
+                    currentPlayer.DartsThrown -= 3;
                     currentPlayer.RemainingScore += currentPlayer.Scores.ElementAt(currentPlayer.ScoresIndex);
                 }
                 currentPlayer.Scores.RemoveAt(currentPlayer.ScoresIndex);
@@ -132,6 +140,7 @@ namespace GIP_GUI_Dartbord
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
+            //loserScores = new List<int>();
             if (score <= maxScorePerThrow && currentPlayer.RemainingScore >= score)
             {
                 currentPlayer.Scores.Add(score);
@@ -148,19 +157,21 @@ namespace GIP_GUI_Dartbord
                     if (breakLeg == true)
                     {
                         currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
-                        loserScore = currentPlayer.RemainingScore;
+                        //loserScores.Add(currentPlayer.RemainingScore);
                         currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
                     }
                     else
                     {
-                        loserScore = currentPlayer.RemainingScore;
+                        //loserScores.Add(currentPlayer.RemainingScore);
                     }
+                    //loserScoresIndex++;
+                    EndOfLegDartsThrownEnter();
                     ResetScore();
                 }
                 else
                 {
                     currentPlayer.RemainingScore -= score;
-                    //currentPlayer.DartsThrown += 3;
+                    currentPlayer.DartsThrown += 3;
                     currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
                     
                 }
@@ -196,6 +207,26 @@ namespace GIP_GUI_Dartbord
             playerTwo.RemainingScore = 501;
             playerOne.DartsThrown = 0;
             playerTwo.DartsThrown = 0;
+        }
+
+        private void EndOfLegDartsThrownEnter()
+        {
+            playerOne.DartsThrownInLeg.Add(playerOne.DartsThrown);
+            playerTwo.DartsThrownInLeg.Add(playerTwo.DartsThrown);
+            playerOne.DartsThrownInLegIndex++;
+            playerTwo.DartsThrownInLegIndex++;
+            playerOne.DartsThrown = 0;
+            playerTwo.DartsThrown = 0;     
+        }
+
+        private void EndOfLegDartsThrownPrevious()
+        {
+            playerOne.DartsThrownInLegIndex--;
+            playerTwo.DartsThrownInLegIndex--;
+            playerOne.DartsThrown = playerOne.DartsThrownInLeg.ElementAt(playerOne.DartsThrownInLegIndex);
+            playerOne.DartsThrownInLeg.RemoveAt(playerOne.DartsThrownInLegIndex);
+            playerTwo.DartsThrown = playerTwo.DartsThrownInLeg.ElementAt(playerTwo.DartsThrownInLegIndex);
+            playerTwo.DartsThrownInLeg.RemoveAt(playerOne.DartsThrownInLegIndex);
         }
 
         private void ResetDisplay()
