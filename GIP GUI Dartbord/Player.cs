@@ -12,6 +12,7 @@ namespace GIP_GUI_Dartbord
         {
             RemainingScore = 501;
             ScoresIndex = -1;
+            Avrage = 0.00;
             Scores = new List<int>();
             DartsThrownInLeg = new List<int>();
         }
@@ -23,6 +24,8 @@ namespace GIP_GUI_Dartbord
         public int Legs { get; set; }
         public int RemainingScore { get; set; }
         public int DartsThrown { get; set; }
+        public int LastScore { get; set; }
+        public double Avrage { get; set; }
 
     }
 }
