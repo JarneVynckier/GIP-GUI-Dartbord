@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,9 @@ namespace GIP_GUI_Dartbord
         {
 
         }
-        Frm501Game frm501Game = new Frm501Game();
+
+        Frm501Game frm501Game = new Frm501Game();      
+
         private void btn501Game_Click(object sender, EventArgs e)
         {
             frm501Game.ShowDialog();
@@ -69,6 +72,17 @@ namespace GIP_GUI_Dartbord
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btn501Game_Paint(object sender, PaintEventArgs e)
+        {
+            GraphicsPath buttonPath = new GraphicsPath();           
+            Rectangle newRectangle = btn501Game.ClientRectangle;            
+            newRectangle.Inflate(-1, -1);           
+            e.Graphics.DrawEllipse(Pens.Black, newRectangle);            
+            newRectangle.Inflate(1, 1);          
+            buttonPath.AddEllipse(newRectangle);           
+            btn501Game.Region = new Region(buttonPath);
         }
     }
 }

@@ -472,7 +472,6 @@ namespace GIP_GUI_Dartbord
             this.Name = "Frm501Game";
             this.Text = "First to 10";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm501Game_FormClosing);
-            this.Load += new System.EventHandler(this.Frm501Game_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
