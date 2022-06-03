@@ -63,15 +63,20 @@ namespace GIP_GUI_Dartbord
             this.pnlRight = new System.Windows.Forms.Panel();
             this.lblGamemodes = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblControls = new System.Windows.Forms.Label();
-            this.btnOff = new System.Windows.Forms.Button();
             this.pnlRotateOff = new System.Windows.Forms.Panel();
+            this.btnOff = new System.Windows.Forms.Button();
+            this.lblControls = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHit = new System.Windows.Forms.Button();
+            this.btnAtc = new System.Windows.Forms.Button();
+            this.lblATC = new System.Windows.Forms.Label();
             this.pnlPorts.SuspendLayout();
             this.tlpnlDisplays.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlRotateOff.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn501Game
@@ -80,10 +85,10 @@ namespace GIP_GUI_Dartbord
             this.btn501Game.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btn501Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn501Game.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn501Game.Location = new System.Drawing.Point(41, 56);
-            this.btn501Game.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn501Game.Location = new System.Drawing.Point(31, 46);
+            this.btn501Game.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn501Game.Name = "btn501Game";
-            this.btn501Game.Size = new System.Drawing.Size(189, 105);
+            this.btn501Game.Size = new System.Drawing.Size(142, 85);
             this.btn501Game.TabIndex = 0;
             this.btn501Game.Text = "501";
             this.btn501Game.UseVisualStyleBackColor = false;
@@ -97,9 +102,8 @@ namespace GIP_GUI_Dartbord
             this.btnRotate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRotate.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRotate.Location = new System.Drawing.Point(0, 0);
-            this.btnRotate.Margin = new System.Windows.Forms.Padding(4);
             this.btnRotate.Name = "btnRotate";
-            this.btnRotate.Size = new System.Drawing.Size(215, 135);
+            this.btnRotate.Size = new System.Drawing.Size(161, 110);
             this.btnRotate.TabIndex = 1;
             this.btnRotate.Text = " Rotate";
             this.btnRotate.UseVisualStyleBackColor = false;
@@ -110,10 +114,9 @@ namespace GIP_GUI_Dartbord
             this.pnlPorts.Controls.Add(this.lblVerbinding);
             this.pnlPorts.Controls.Add(this.lstPoort);
             this.pnlPorts.Controls.Add(this.btnZoekSerial);
-            this.pnlPorts.Location = new System.Drawing.Point(4, 56);
-            this.pnlPorts.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlPorts.Location = new System.Drawing.Point(3, 46);
             this.pnlPorts.Name = "pnlPorts";
-            this.pnlPorts.Size = new System.Drawing.Size(216, 379);
+            this.pnlPorts.Size = new System.Drawing.Size(162, 308);
             this.pnlPorts.TabIndex = 2;
             // 
             // lblVerbinding
@@ -121,10 +124,9 @@ namespace GIP_GUI_Dartbord
             this.lblVerbinding.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblVerbinding.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVerbinding.ForeColor = System.Drawing.Color.Red;
-            this.lblVerbinding.Location = new System.Drawing.Point(0, 342);
-            this.lblVerbinding.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVerbinding.Location = new System.Drawing.Point(0, 278);
             this.lblVerbinding.Name = "lblVerbinding";
-            this.lblVerbinding.Size = new System.Drawing.Size(216, 37);
+            this.lblVerbinding.Size = new System.Drawing.Size(162, 30);
             this.lblVerbinding.TabIndex = 5;
             this.lblVerbinding.Text = "Er is geen verbinding!";
             this.lblVerbinding.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -133,11 +135,10 @@ namespace GIP_GUI_Dartbord
             // 
             this.lstPoort.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstPoort.FormattingEnabled = true;
-            this.lstPoort.ItemHeight = 16;
-            this.lstPoort.Location = new System.Drawing.Point(0, 50);
-            this.lstPoort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lstPoort.Location = new System.Drawing.Point(0, 41);
+            this.lstPoort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstPoort.Name = "lstPoort";
-            this.lstPoort.Size = new System.Drawing.Size(216, 329);
+            this.lstPoort.Size = new System.Drawing.Size(162, 267);
             this.lstPoort.TabIndex = 4;
             this.lstPoort.SelectedIndexChanged += new System.EventHandler(this.lstPoort_SelectedIndexChanged);
             // 
@@ -145,10 +146,10 @@ namespace GIP_GUI_Dartbord
             // 
             this.btnZoekSerial.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnZoekSerial.Location = new System.Drawing.Point(0, 0);
-            this.btnZoekSerial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnZoekSerial.MinimumSize = new System.Drawing.Size(0, 50);
+            this.btnZoekSerial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnZoekSerial.MinimumSize = new System.Drawing.Size(0, 41);
             this.btnZoekSerial.Name = "btnZoekSerial";
-            this.btnZoekSerial.Size = new System.Drawing.Size(216, 50);
+            this.btnZoekSerial.Size = new System.Drawing.Size(162, 41);
             this.btnZoekSerial.TabIndex = 3;
             this.btnZoekSerial.Text = "Zoek alle seriële poorten";
             this.btnZoekSerial.UseVisualStyleBackColor = true;
@@ -182,7 +183,8 @@ namespace GIP_GUI_Dartbord
             this.tlpnlDisplays.Controls.Add(this.btn2, 1, 0);
             this.tlpnlDisplays.Controls.Add(this.btn1, 0, 0);
             this.tlpnlDisplays.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpnlDisplays.Location = new System.Drawing.Point(0, 386);
+            this.tlpnlDisplays.Location = new System.Drawing.Point(0, 313);
+            this.tlpnlDisplays.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpnlDisplays.Name = "tlpnlDisplays";
             this.tlpnlDisplays.RowCount = 5;
             this.tlpnlDisplays.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -190,7 +192,7 @@ namespace GIP_GUI_Dartbord
             this.tlpnlDisplays.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpnlDisplays.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpnlDisplays.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpnlDisplays.Size = new System.Drawing.Size(438, 338);
+            this.tlpnlDisplays.Size = new System.Drawing.Size(329, 275);
             this.tlpnlDisplays.TabIndex = 3;
             // 
             // btn20
@@ -199,9 +201,10 @@ namespace GIP_GUI_Dartbord
             this.btn20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn20.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn20.Location = new System.Drawing.Point(330, 271);
+            this.btn20.Location = new System.Drawing.Point(248, 222);
+            this.btn20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn20.Name = "btn20";
-            this.btn20.Size = new System.Drawing.Size(105, 64);
+            this.btn20.Size = new System.Drawing.Size(79, 51);
             this.btn20.TabIndex = 19;
             this.btn20.Text = "20";
             this.btn20.UseVisualStyleBackColor = false;
@@ -213,9 +216,10 @@ namespace GIP_GUI_Dartbord
             this.btn19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn19.Location = new System.Drawing.Point(221, 271);
+            this.btn19.Location = new System.Drawing.Point(166, 222);
+            this.btn19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn19.Name = "btn19";
-            this.btn19.Size = new System.Drawing.Size(103, 64);
+            this.btn19.Size = new System.Drawing.Size(78, 51);
             this.btn19.TabIndex = 18;
             this.btn19.Text = "19";
             this.btn19.UseVisualStyleBackColor = false;
@@ -227,9 +231,10 @@ namespace GIP_GUI_Dartbord
             this.btn18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn18.Location = new System.Drawing.Point(112, 271);
+            this.btn18.Location = new System.Drawing.Point(84, 222);
+            this.btn18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn18.Name = "btn18";
-            this.btn18.Size = new System.Drawing.Size(103, 64);
+            this.btn18.Size = new System.Drawing.Size(78, 51);
             this.btn18.TabIndex = 17;
             this.btn18.Text = "18";
             this.btn18.UseVisualStyleBackColor = false;
@@ -241,9 +246,10 @@ namespace GIP_GUI_Dartbord
             this.btn17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn17.Location = new System.Drawing.Point(3, 271);
+            this.btn17.Location = new System.Drawing.Point(2, 222);
+            this.btn17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn17.Name = "btn17";
-            this.btn17.Size = new System.Drawing.Size(103, 64);
+            this.btn17.Size = new System.Drawing.Size(78, 51);
             this.btn17.TabIndex = 16;
             this.btn17.Text = "17";
             this.btn17.UseVisualStyleBackColor = false;
@@ -255,9 +261,10 @@ namespace GIP_GUI_Dartbord
             this.btn16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn16.Location = new System.Drawing.Point(330, 204);
+            this.btn16.Location = new System.Drawing.Point(248, 167);
+            this.btn16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn16.Name = "btn16";
-            this.btn16.Size = new System.Drawing.Size(105, 61);
+            this.btn16.Size = new System.Drawing.Size(79, 51);
             this.btn16.TabIndex = 15;
             this.btn16.Text = "16";
             this.btn16.UseVisualStyleBackColor = false;
@@ -269,9 +276,10 @@ namespace GIP_GUI_Dartbord
             this.btn15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn15.Location = new System.Drawing.Point(221, 204);
+            this.btn15.Location = new System.Drawing.Point(166, 167);
+            this.btn15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn15.Name = "btn15";
-            this.btn15.Size = new System.Drawing.Size(103, 61);
+            this.btn15.Size = new System.Drawing.Size(78, 51);
             this.btn15.TabIndex = 14;
             this.btn15.Text = "15";
             this.btn15.UseVisualStyleBackColor = false;
@@ -283,9 +291,10 @@ namespace GIP_GUI_Dartbord
             this.btn14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn14.Location = new System.Drawing.Point(112, 204);
+            this.btn14.Location = new System.Drawing.Point(84, 167);
+            this.btn14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn14.Name = "btn14";
-            this.btn14.Size = new System.Drawing.Size(103, 61);
+            this.btn14.Size = new System.Drawing.Size(78, 51);
             this.btn14.TabIndex = 13;
             this.btn14.Text = "14";
             this.btn14.UseVisualStyleBackColor = false;
@@ -297,9 +306,10 @@ namespace GIP_GUI_Dartbord
             this.btn13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn13.Location = new System.Drawing.Point(3, 204);
+            this.btn13.Location = new System.Drawing.Point(2, 167);
+            this.btn13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn13.Name = "btn13";
-            this.btn13.Size = new System.Drawing.Size(103, 61);
+            this.btn13.Size = new System.Drawing.Size(78, 51);
             this.btn13.TabIndex = 12;
             this.btn13.Text = "13";
             this.btn13.UseVisualStyleBackColor = false;
@@ -311,9 +321,10 @@ namespace GIP_GUI_Dartbord
             this.btn12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn12.Location = new System.Drawing.Point(330, 137);
+            this.btn12.Location = new System.Drawing.Point(248, 112);
+            this.btn12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn12.Name = "btn12";
-            this.btn12.Size = new System.Drawing.Size(105, 61);
+            this.btn12.Size = new System.Drawing.Size(79, 51);
             this.btn12.TabIndex = 11;
             this.btn12.Text = "12";
             this.btn12.UseVisualStyleBackColor = false;
@@ -325,9 +336,10 @@ namespace GIP_GUI_Dartbord
             this.btn11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn11.Location = new System.Drawing.Point(221, 137);
+            this.btn11.Location = new System.Drawing.Point(166, 112);
+            this.btn11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn11.Name = "btn11";
-            this.btn11.Size = new System.Drawing.Size(103, 61);
+            this.btn11.Size = new System.Drawing.Size(78, 51);
             this.btn11.TabIndex = 10;
             this.btn11.Text = "11";
             this.btn11.UseVisualStyleBackColor = false;
@@ -339,9 +351,10 @@ namespace GIP_GUI_Dartbord
             this.btn10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn10.Location = new System.Drawing.Point(112, 137);
+            this.btn10.Location = new System.Drawing.Point(84, 112);
+            this.btn10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn10.Name = "btn10";
-            this.btn10.Size = new System.Drawing.Size(103, 61);
+            this.btn10.Size = new System.Drawing.Size(78, 51);
             this.btn10.TabIndex = 9;
             this.btn10.Text = "10";
             this.btn10.UseVisualStyleBackColor = false;
@@ -353,9 +366,10 @@ namespace GIP_GUI_Dartbord
             this.btn9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn9.Location = new System.Drawing.Point(3, 137);
+            this.btn9.Location = new System.Drawing.Point(2, 112);
+            this.btn9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(103, 61);
+            this.btn9.Size = new System.Drawing.Size(78, 51);
             this.btn9.TabIndex = 8;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
@@ -367,9 +381,10 @@ namespace GIP_GUI_Dartbord
             this.btn8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn8.Location = new System.Drawing.Point(330, 70);
+            this.btn8.Location = new System.Drawing.Point(248, 57);
+            this.btn8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(105, 61);
+            this.btn8.Size = new System.Drawing.Size(79, 51);
             this.btn8.TabIndex = 7;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
@@ -381,9 +396,10 @@ namespace GIP_GUI_Dartbord
             this.btn7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn7.Location = new System.Drawing.Point(221, 70);
+            this.btn7.Location = new System.Drawing.Point(166, 57);
+            this.btn7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(103, 61);
+            this.btn7.Size = new System.Drawing.Size(78, 51);
             this.btn7.TabIndex = 6;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
@@ -395,9 +411,10 @@ namespace GIP_GUI_Dartbord
             this.btn6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn6.Location = new System.Drawing.Point(112, 70);
+            this.btn6.Location = new System.Drawing.Point(84, 57);
+            this.btn6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(103, 61);
+            this.btn6.Size = new System.Drawing.Size(78, 51);
             this.btn6.TabIndex = 5;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
@@ -409,9 +426,10 @@ namespace GIP_GUI_Dartbord
             this.btn5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn5.Location = new System.Drawing.Point(3, 70);
+            this.btn5.Location = new System.Drawing.Point(2, 57);
+            this.btn5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(103, 61);
+            this.btn5.Size = new System.Drawing.Size(78, 51);
             this.btn5.TabIndex = 4;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
@@ -423,9 +441,10 @@ namespace GIP_GUI_Dartbord
             this.btn4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn4.Location = new System.Drawing.Point(330, 3);
+            this.btn4.Location = new System.Drawing.Point(248, 2);
+            this.btn4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(105, 61);
+            this.btn4.Size = new System.Drawing.Size(79, 51);
             this.btn4.TabIndex = 3;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
@@ -437,9 +456,10 @@ namespace GIP_GUI_Dartbord
             this.btn3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3.Location = new System.Drawing.Point(221, 3);
+            this.btn3.Location = new System.Drawing.Point(166, 2);
+            this.btn3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(103, 61);
+            this.btn3.Size = new System.Drawing.Size(78, 51);
             this.btn3.TabIndex = 2;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
@@ -451,9 +471,10 @@ namespace GIP_GUI_Dartbord
             this.btn2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2.Location = new System.Drawing.Point(112, 3);
+            this.btn2.Location = new System.Drawing.Point(84, 2);
+            this.btn2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(103, 61);
+            this.btn2.Size = new System.Drawing.Size(78, 51);
             this.btn2.TabIndex = 1;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
@@ -465,9 +486,10 @@ namespace GIP_GUI_Dartbord
             this.btn1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1.Location = new System.Drawing.Point(3, 3);
+            this.btn1.Location = new System.Drawing.Point(2, 2);
+            this.btn1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(103, 61);
+            this.btn1.Size = new System.Drawing.Size(78, 51);
             this.btn1.TabIndex = 0;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
@@ -478,18 +500,21 @@ namespace GIP_GUI_Dartbord
             this.pnlLeft.Controls.Add(this.pnlPorts);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(299, 724);
+            this.pnlLeft.Size = new System.Drawing.Size(224, 588);
             this.pnlLeft.TabIndex = 4;
             // 
             // pnlRight
             // 
+            this.pnlRight.Controls.Add(this.panel2);
             this.pnlRight.Controls.Add(this.lblGamemodes);
             this.pnlRight.Controls.Add(this.btn501Game);
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(737, 0);
+            this.pnlRight.Location = new System.Drawing.Point(553, 0);
+            this.pnlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(276, 724);
+            this.pnlRight.Size = new System.Drawing.Size(207, 588);
             this.pnlRight.TabIndex = 5;
             // 
             // lblGamemodes
@@ -498,8 +523,9 @@ namespace GIP_GUI_Dartbord
             this.lblGamemodes.Font = new System.Drawing.Font("Helvetica-Narrow", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGamemodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblGamemodes.Location = new System.Drawing.Point(0, 0);
+            this.lblGamemodes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGamemodes.Name = "lblGamemodes";
-            this.lblGamemodes.Size = new System.Drawing.Size(276, 50);
+            this.lblGamemodes.Size = new System.Drawing.Size(207, 41);
             this.lblGamemodes.TabIndex = 1;
             this.lblGamemodes.Text = "Gamemodes";
             this.lblGamemodes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -510,22 +536,22 @@ namespace GIP_GUI_Dartbord
             this.panel1.Controls.Add(this.lblControls);
             this.panel1.Controls.Add(this.tlpnlDisplays);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(299, 0);
+            this.panel1.Location = new System.Drawing.Point(224, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(438, 724);
+            this.panel1.Size = new System.Drawing.Size(329, 588);
             this.panel1.TabIndex = 7;
             // 
-            // lblControls
+            // pnlRotateOff
             // 
-            this.lblControls.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblControls.Font = new System.Drawing.Font("Helvetica-Narrow", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblControls.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblControls.Location = new System.Drawing.Point(0, 0);
-            this.lblControls.Name = "lblControls";
-            this.lblControls.Size = new System.Drawing.Size(438, 50);
-            this.lblControls.TabIndex = 4;
-            this.lblControls.Text = "Controls";
-            this.lblControls.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pnlRotateOff.Controls.Add(this.btnRotate);
+            this.pnlRotateOff.Controls.Add(this.btnOff);
+            this.pnlRotateOff.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlRotateOff.Location = new System.Drawing.Point(0, 203);
+            this.pnlRotateOff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRotateOff.Name = "pnlRotateOff";
+            this.pnlRotateOff.Size = new System.Drawing.Size(329, 110);
+            this.pnlRotateOff.TabIndex = 6;
             // 
             // btnOff
             // 
@@ -533,37 +559,95 @@ namespace GIP_GUI_Dartbord
             this.btnOff.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnOff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOff.Location = new System.Drawing.Point(223, 0);
-            this.btnOff.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOff.Location = new System.Drawing.Point(168, 0);
             this.btnOff.Name = "btnOff";
-            this.btnOff.Size = new System.Drawing.Size(215, 135);
+            this.btnOff.Size = new System.Drawing.Size(161, 110);
             this.btnOff.TabIndex = 5;
             this.btnOff.Text = "Off";
             this.btnOff.UseVisualStyleBackColor = false;
             this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
             // 
-            // pnlRotateOff
+            // lblControls
             // 
-            this.pnlRotateOff.Controls.Add(this.btnRotate);
-            this.pnlRotateOff.Controls.Add(this.btnOff);
-            this.pnlRotateOff.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlRotateOff.Location = new System.Drawing.Point(0, 251);
-            this.pnlRotateOff.Name = "pnlRotateOff";
-            this.pnlRotateOff.Size = new System.Drawing.Size(438, 135);
-            this.pnlRotateOff.TabIndex = 6;
+            this.lblControls.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblControls.Font = new System.Drawing.Font("Helvetica-Narrow", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblControls.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblControls.Location = new System.Drawing.Point(0, 0);
+            this.lblControls.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblControls.Name = "lblControls";
+            this.lblControls.Size = new System.Drawing.Size(329, 41);
+            this.lblControls.TabIndex = 4;
+            this.lblControls.Text = "Controls";
+            this.lblControls.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.lblATC);
+            this.panel2.Controls.Add(this.btnHit);
+            this.panel2.Controls.Add(this.btnAtc);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 351);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(207, 237);
+            this.panel2.TabIndex = 3;
+            // 
+            // btnHit
+            // 
+            this.btnHit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnHit.Enabled = false;
+            this.btnHit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnHit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHit.Location = new System.Drawing.Point(31, 93);
+            this.btnHit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHit.Name = "btnHit";
+            this.btnHit.Size = new System.Drawing.Size(142, 45);
+            this.btnHit.TabIndex = 3;
+            this.btnHit.Text = "HIT!";
+            this.btnHit.UseVisualStyleBackColor = false;
+            this.btnHit.Click += new System.EventHandler(this.btnHit_Click);
+            // 
+            // btnAtc
+            // 
+            this.btnAtc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAtc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAtc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAtc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtc.Location = new System.Drawing.Point(0, 0);
+            this.btnAtc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAtc.Name = "btnAtc";
+            this.btnAtc.Size = new System.Drawing.Size(207, 70);
+            this.btnAtc.TabIndex = 2;
+            this.btnAtc.Text = "Around the clock";
+            this.btnAtc.UseVisualStyleBackColor = false;
+            this.btnAtc.Click += new System.EventHandler(this.btnAtc_Click);
+            // 
+            // lblATC
+            // 
+            this.lblATC.BackColor = System.Drawing.Color.Black;
+            this.lblATC.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblATC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblATC.Location = new System.Drawing.Point(58, 154);
+            this.lblATC.Name = "lblATC";
+            this.lblATC.Size = new System.Drawing.Size(87, 63);
+            this.lblATC.TabIndex = 4;
+            this.lblATC.Text = "0";
+            this.lblATC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(1013, 724);
+            this.ClientSize = new System.Drawing.Size(760, 588);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlRight);
             this.Controls.Add(this.pnlLeft);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DartsMode";
@@ -575,6 +659,7 @@ namespace GIP_GUI_Dartbord
             this.pnlRight.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlRotateOff.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -616,6 +701,10 @@ namespace GIP_GUI_Dartbord
         private System.Windows.Forms.Label lblControls;
         private System.Windows.Forms.Button btnOff;
         private System.Windows.Forms.Panel pnlRotateOff;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnHit;
+        private System.Windows.Forms.Button btnAtc;
+        private System.Windows.Forms.Label lblATC;
     }
 }
 

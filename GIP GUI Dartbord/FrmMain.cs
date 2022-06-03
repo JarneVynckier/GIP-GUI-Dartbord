@@ -13,6 +13,8 @@ namespace GIP_GUI_Dartbord
 {
     public partial class FrmMain : Form
     {
+        bool AroundTheClock = false;
+        int AroundTheClockCounter = 0;
         public FrmMain()
         {
             InitializeComponent();
@@ -191,6 +193,36 @@ namespace GIP_GUI_Dartbord
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnAtc_Click(object sender, EventArgs e)
+        {
+            AroundTheClock = AroundTheClock == true ? false : true;
+            if(AroundTheClock==true)
+            {
+                btnHit.Enabled = true;
+                btnAtc.FlatAppearance.BorderColor = Color.DarkOrange;
+                tlpnlDisplays.Enabled = false;
+                pnlRotateOff.Enabled = false;
+                btn501Game.Enabled = false;
+                AroundTheClockCounter = 1;
+            }
+            else
+            {
+                btnHit.Enabled = false;
+                btnAtc.FlatAppearance.BorderColor = default;
+                tlpnlDisplays.Enabled = true;
+                pnlRotateOff.Enabled = true;
+                btn501Game.Enabled = true;
+                AroundTheClockCounter = 0;
+            }
+            lblATC.Text = AroundTheClockCounter.ToString();
+        }
+
+        private void btnHit_Click(object sender, EventArgs e)
+        {
+            AroundTheClockCounter++;
+            lblATC.Text = AroundTheClockCounter.ToString();
         }
     }
 }
