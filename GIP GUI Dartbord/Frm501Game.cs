@@ -25,6 +25,7 @@ namespace GIP_GUI_Dartbord
         public Frm501Game()
         {
             InitializeComponent();
+            //creating the two players with the basic constructor "player"
             playerOne = new Player();
             playerTwo = new Player();
 
@@ -34,6 +35,7 @@ namespace GIP_GUI_Dartbord
 
         private void Frm501Game_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //closing the form but still be able to open it again
             e.Cancel = true;
             this.Hide();
             ResetGame();
@@ -41,6 +43,8 @@ namespace GIP_GUI_Dartbord
 
         private void Click_NumPad(object sender, EventArgs e)
         {
+            //If a number on the numpad is clicked then the number will show in the textbox
+            //The return button is there for mistakes so you can remove numbers that are wrong
             txtScore.BackColor = Color.White;
             Button btnNumber = sender as Button;
             if (displayIndex < 4 && btnNumber.Text != "") displayIndex++;
@@ -67,6 +71,7 @@ namespace GIP_GUI_Dartbord
                         break;
                 }
             }
+            //the numbers in the textbox are saved in a variable to use in the game.
             string Score = display[0] + display[1] + display[2];
             txtScore.ForeColor = Color.Black;
             txtScore.Text = Score;
@@ -82,6 +87,7 @@ namespace GIP_GUI_Dartbord
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
+            //Code for returning in the game, if you make a mistake then you can go back in the game
             if (playerOne.ScoresIndex >= 0 || playerTwo.ScoresIndex >= 0)
             {
                 SwitchCurrentPlayer();
@@ -129,6 +135,7 @@ namespace GIP_GUI_Dartbord
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
+            //If enter is clicked, the scores will be updated
             if (score <= maxScorePerThrow && currentPlayer.RemainingScore >= score)
             {
                 currentPlayer.Scores.Add(score);
@@ -173,21 +180,25 @@ namespace GIP_GUI_Dartbord
 
         public void Winner()
         {
+            //the winner of the leg gets a point
             currentPlayer.Legs += 1;
         }
 
         public void SwitchCurrentPlayer()
         {
+            //swithes the current player
             currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
         }
 
         public void SwitchStarterPlayer()
         {
+            //switches the player who startes the leg
             startPlayer = startPlayer == playerOne ? playerTwo : playerOne;
         }
 
         public void UpdateLastScore()
         {
+            //updates the information in the last score tab
             if (currentPlayer.ScoresIndex == -1)
             {
                 currentPlayer.LastScore = 0;
@@ -200,6 +211,7 @@ namespace GIP_GUI_Dartbord
 
         public void BreakLeg()
         {
+            //looks at the winners to see if the other player broke the oponents leg
             if (startPlayer != currentPlayer)
             {
                 breakLeg.Add(true);
@@ -213,6 +225,7 @@ namespace GIP_GUI_Dartbord
 
         private void UpdateScore()
         {
+            //Updates all the text tabs to show the score to the player
             lblPlayer1.Text = playerOne.RemainingScore.ToString();
             lblPlayer2.Text = playerTwo.RemainingScore.ToString();
             lblPlayer1Legs.Text = "legs: " + playerOne.Legs.ToString();
@@ -227,6 +240,7 @@ namespace GIP_GUI_Dartbord
 
         private void ResetScore()
         {
+            //Resets all the scores from the players to their begin values
             playerOne.RemainingScore = 501;
             playerTwo.RemainingScore = 501;
             playerOne.DartsThrown = 0;
@@ -237,6 +251,7 @@ namespace GIP_GUI_Dartbord
 
         private void CalculateAvrages()
         {
+            //this method is created to calculate the players average in each turn
             int totalScoredPoints = 0;
             if (currentPlayer.Scores.Count != 0)
             {
@@ -254,6 +269,7 @@ namespace GIP_GUI_Dartbord
 
         private void EndOfLegDartsThrownEnter()
         {
+            //if a player wins a leg then some of the info tabs need to be reseted 
             playerOne.DartsThrownInLeg.Add(playerOne.DartsThrown);
             playerTwo.DartsThrownInLeg.Add(playerTwo.DartsThrown);
             playerOne.DartsThrownInLegIndex++;
@@ -264,6 +280,8 @@ namespace GIP_GUI_Dartbord
 
         private void EndOfLegDartsThrownPrevious()
         {
+            //if the return button is clicked and you reach the beginning of the last leg then the score needs to be updated 
+            //to the end of the last leg
             playerOne.DartsThrownInLegIndex--;
             playerTwo.DartsThrownInLegIndex--;
             playerOne.DartsThrown = playerOne.DartsThrownInLeg.ElementAt(playerOne.DartsThrownInLegIndex);
@@ -274,6 +292,7 @@ namespace GIP_GUI_Dartbord
 
         private void ResetDisplay()
         {
+            //reset the display of the score to 0 again
             display[0] = null;
             display[1] = null;
             display[2] = null;
@@ -285,6 +304,7 @@ namespace GIP_GUI_Dartbord
 
         private void ResetScores()
         {
+            //clears the score to the beginning of the game
             playerOne.Scores.Clear();
             playerTwo.Scores.Clear();
             playerOne.RemainingScore = 501;
@@ -297,6 +317,7 @@ namespace GIP_GUI_Dartbord
 
         private void ResetGame()
         {
+            //resets the game fully for another round
             ResetDisplay();
             ResetScores();
 

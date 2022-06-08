@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GIP_GUI_Dartbord
 {
+    //basic constructor for setting the player with the right values
     public class Player
     {
         public Player()
