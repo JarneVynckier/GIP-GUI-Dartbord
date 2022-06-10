@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -50,6 +51,20 @@ namespace GIP_GUI_Dartbord
             try
             {
                 serial.Write(data, 0, data.Length);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                MessageBox.Show("Kan niet roteren.");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            Thread.Sleep(200);
+            char[] Data = new char[] { 'u' };
+            try
+            {
+                serial.Write(Data, 0, Data.Length);
             }
             catch (UnauthorizedAccessException)
             {
