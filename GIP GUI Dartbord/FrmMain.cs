@@ -234,6 +234,15 @@ namespace GIP_GUI_Dartbord
                 pnlRotateOff.Enabled = false;
                 btn501Game.Enabled = false;
                 AroundTheClockCounter = 1;
+                char[] data = new char[] { 'a' };
+                try
+                {
+                    serial.Write(data, 0, data.Length);
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
             else
             {
@@ -243,6 +252,7 @@ namespace GIP_GUI_Dartbord
                 pnlRotateOff.Enabled = true;
                 btn501Game.Enabled = true;
                 AroundTheClockCounter = 0;
+                DisplaysOff();
             }
             lblATC.Text = AroundTheClockCounter.ToString();
         }
